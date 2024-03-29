@@ -95,7 +95,7 @@ class Library:
         self.books = []
 
   
-#Проверка подлинности по шаблону из класса Книги      
+#Проверка подлинности по шаблону из класса Книги и наполнение Библиотеки     
     def __iadd__(self, other):
         if not isinstance(other, BookCard):
             print("Not a book")
