@@ -33,17 +33,27 @@ class BookCard:
 #Создаём функцию которая проверит актуальность вводимой информации (проверяет год издания) по Блоку 2 из Задания 1
     def __ge__(self, other=2025):
         if self.__year >= other:
-            print("***Not a valid book***")   
+            print("***Not a valid book***")  
+            return True
+        else:
+            return False
             
             
     def __le__(self, other=0):
         if self.__year <= other:
             print("***Not a valid book***")  
+            return True
+        else:
+            return False
 
   
 #Добавляем метод сравнения по Блоку 2 из Задания 1
     def __gt__(self, other):
-        pass
+        if self.__year > other:
+            return True
+        else:
+            return False
+
     
 #Добавляем методы извлечения и изменения атрибутов по Блоку 2 из Задания 1
 #Геттер и сеттер авторства  
