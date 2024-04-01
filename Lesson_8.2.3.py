@@ -31,19 +31,19 @@
 #Создаём родительский класс Транспорт, задаём аттрибуты
 from abc import ABC, abstractmethod
 class Transport(ABC):
+    mileage = 0
     def __init__(
         self, 
         brand: str, 
         model: str, 
         issue_year: int, 
         color: str, 
-        mileage: int
         ):
             self.brand = brand
             self.model = model
             self.issue_year = issue_year
             self.color = color
-            self.mileage = 0
+
     
 
 #Абстрактный метод для потомков
@@ -65,7 +65,7 @@ class Car(Transport):
     color, 
     engine_type: str
     ):
-        super().__init__(brand, model, issue_year, color, mileage=0)      #обращаемся к родительским аттрибутам и назначаем новый
+        super().__init__(brand, model, issue_year, color)      #обращаемся к родительским аттрибутам и назначаем новый
         self.engine_type = engine_type
         
         
@@ -84,7 +84,7 @@ class Airplane(Transport):
     color, 
     lifting_capacity: int
     ):
-        super().__init__(brand, model, issue_year, color, mileage=0)
+        super().__init__(brand, model, issue_year, color)
         self.lifting_capacity = lifting_capacity
         
         
